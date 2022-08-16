@@ -15,3 +15,10 @@ class TLSAdapter(requests.adapters.HTTPAdapter):
                 block=block,
                 ssl_version=ssl.PROTOCOL_TLS,
                 ssl_context=ctx)
+
+
+def get_file_name(url):
+    name = url[:-5]
+    name = name.split('/')
+    file_name = "_".join(name[-2:])
+    return file_name
